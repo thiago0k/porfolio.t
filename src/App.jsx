@@ -55,7 +55,7 @@ export default  function App() {
             <button className="btn-disponible">Disponible Para Trabajar</button>
         </div>
 
-        <li className="item-presentacion uno"><h1  style={{ color: click ? 'black' : 'white' }}>Hola! Soy Thiago,</h1></li>
+        <li className="item-presentacion uno"><h1  style={{ color: click ? 'black' : 'white' }}>Hola! Soy elisas,</h1></li>
         <li style={{ color: click ? 'black' : 'white' }} className="item-presentacion"><h3  style={{ color: click ? 'black' : 'white' }}>Apasionado por la tecnología.</h3><strong><br></br>Aprendo y supero nuevos retos<br /> semanalmente y analizo</strong> cómo mejoran mis habilidades a través de ellos.</li>
 
         <div className="parte-2">
