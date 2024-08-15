@@ -52,7 +52,7 @@ export default  function App() {
            <ul className="contenedor-interior-presentacion">
         <div className="parte-1"> 
             <img className="image-logo" src="src/iconos/thiago.jpg" alt="logo" />
-            <button className="btn-disponible">Disponible Para Trabajar</button>
+            <button className="btn-disponible">Disponible</button>
         </div>
 
         <li className="item-presentacion uno"><h1  style={{ color: click ? 'black' : 'white' }}>Hola! Soy elisas,</h1></li>
