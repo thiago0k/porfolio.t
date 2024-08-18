@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import './App.css';
 import './App.scss';
-import { useState} from 'react';
+import { useState,useEffect} from 'react';
 
 export default  function App() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -14,14 +14,24 @@ export default  function App() {
     }
   }
 
-  window.addEventListener('scroll',function() {
-    const headers = document.querySelector('.contenedor-headers');
-    if(this.window.scrollY > 10) {
-      headers.classList.add('on');
-    } else {
-      headers.classList.remove('on')
+  useEffect(() => {
+    function handleScroll() {
+      const headers = document.querySelector('.contenedor-headers');
+      if (window.scrollY > 10) {
+        headers.classList.add('on');
+      } else {
+        headers.classList.remove('on');
+      }
     }
-  });
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty dependency array means this effect runs only once
+
 
   return (
     <>
@@ -52,10 +62,9 @@ export default  function App() {
            <ul className="contenedor-interior-presentacion">
         <div className="parte-1"> 
             <img className="image-logo" src="src/iconos/thiago.jpg" alt="logo" />
-            <button className="btn-disponible">Disponible</button>
+            <button className="btn-disponible">Disponible para trabajar</button>
         </div>
-
-        <li className="item-presentacion uno"><h1  style={{ color: click ? 'black' : 'white' }}>Hola! Soy elisas,</h1></li>
+        <li className="item-presentacion uno"><h1  style={{ color: click ? 'black' : 'white' }}>Hola! Soy Thiago,</h1></li>
         <li style={{ color: click ? 'black' : 'white' }} className="item-presentacion"><h3  style={{ color: click ? 'black' : 'white' }}>Apasionado por la tecnología.</h3><strong><br></br>Aprendo y supero nuevos retos<br /> semanalmente y analizo</strong> cómo mejoran mis habilidades a través de ellos.</li>
 
         <div className="parte-2">
@@ -71,17 +80,14 @@ export default  function App() {
     
      </div>
           </div>
-          {/* <div style={{ background: click ? 'white' : '#1e293b' }} id='seccion1' className='w-full min-h-screen bg-slate-800'>hola</div> */}
-          <div  style={{ background: click ? 'white' : '#19192d' }}  className=' w-full min-h-screen flex flex-col gap-14  m-auto' id='seccion1'>
+          <div style={{ background: click ? 'white' : '#1e293b' }} id='seccion1' className='w-full min-h-screen bg-slate-800'>hola</div> 
+           <div  style={{ background: click ? 'white' : '#19192d' }}  className=' w-full min-h-screen flex flex-col gap-14  m-auto' id='seccion1'>
             <div>
           <h1 className='mt-14 ml-3' style={{ color: click ? 'black' : 'gainsboro' }}><svg className="size-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path d="M14 4l-4 16"></path></svg> Proyectos</h1>
           </div>
-            <Proyectos  cambio={{ color: click ? '#1e293b' : 'white' }}/>
-            <Proyectos  cambio={{ color: click ? '#1e293b' : 'white' }}/>
-            </div>
-          <div>
-          <div  style={{ background: click ? 'white' : '#19192d' }}  className='w-full min-h-screen ' id='seccion2' ><SobreMi  cambiar={{ color: click ? '#1e293b' : 'white' }}/></div>
-          </div>
+             </div>  
+          
+          <div  style={{ background: click ? 'white' : '#19192d' }}  className='' id='seccion2' ><SobreMi  cambiar={{ color: click ? '#1e293b' : 'white' }}/></div>
         </main>
 
         <div className='flex justify-center'>
@@ -191,7 +197,7 @@ function Tecnologias() {
 function SobreMi( {cambiar} ) {
   return(
     <>
-    <div className='m-auto flex   w-[95%] '>
+    <div className='m-auto flex w-[95%] '>
     <div className='sobre-mi flex flex-col gap-10 mt-10'>
     <h1 style={cambiar} className='flex items-center gap-3'><svg className="size-8" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path><path d="M15 19l2 2l4 -4"></path></svg>Sobre Mi</h1>
  <div>
