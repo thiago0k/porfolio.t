@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+// body {
+//   background-color: #19192d;
+// }
+
 html {
     scroll-behavior: smooth;
 }
@@ -43,8 +47,6 @@ a {
   .contenedor-interior-presentacion {
     display: flex;
     flex-direction: column;
-    // max-width: 100%;
-    // color: rgb(114, 99, 99);
   }
   
   .parte-1 {
@@ -105,21 +107,30 @@ a {
     color: white;
   }
 
-  // .contenedor-sobremY {
-  //   width: 95%;
-  // }
 
-  // .sobre-mi {
+  .active {
+    color: black;
+  }
 
-  //   width: 95%;
-  // }
+  .thiagoelias {
+    transform: rotate(3deg);
+  }
+
+  .sobre-mi {
+    display: flex;
+    flex-direction: row;
+    width: 900px;
+    align-items: center;
+
+  }
+
 
   @media (width < 768px) {
     .contenedor-presentacion {
       margin: auto;
       top: 10px;
     }
-    
+
     .btn-disponible {
       padding: 10px 30px;
       border-radius: 10px;
@@ -144,4 +155,26 @@ a {
       color: white;
     }
   
+  }
+
+  @media (width > 768px) {
+    .contenedor-interior-presentacion {
+     margin:125px;
+    }
+  }
+  
+  @media (width < 767px) {
+    .contenedor-interior-presentacion {
+      justify-content: center;
+    }
+  }
+  
+
+  @media (width < 640px) {
+    .contenedor-interior-presentacion {
+      margin-top: 0;
+      margin-left: 0;
+    }
+
+
   }
